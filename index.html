@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Happy Valentine 💕</title>
 
 <style>
@@ -36,13 +36,29 @@
     animation: float 4s ease-in-out infinite;
   }
 
-  .top-left { top: 20px; left: 20px; }
-  .bottom-right { bottom: 20px; right: 20px; transform: rotate(180deg); }
+  .top-left {
+    top: 20px;
+    left: 20px;
+  }
+
+  .bottom-right {
+    bottom: 20px;
+    right: 20px;
+    transform: rotate(180deg);
+  }
 
   @keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
+    0% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
+
+    100% {
+      transform: translateY(0px);
+    }
   }
 
   /* Floating hearts */
@@ -56,8 +72,15 @@
   }
 
   @keyframes floatUp {
-    0% { transform: translateY(0) scale(1); opacity: 1; }
-    100% { transform: translateY(-110vh) scale(1.5); opacity: 0; }
+    0% {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+
+    100% {
+      transform: translateY(-110vh) scale(1.5);
+      opacity: 0;
+    }
   }
 
   .container {
@@ -65,32 +88,42 @@
     z-index: 2;
     animation: fadeIn 2s ease forwards;
     opacity: 0;
+    max-width: 350px;
+    margin: 0 15px;
   }
 
   @keyframes fadeIn {
-    to { opacity: 1; }
+    to {
+      opacity: 1;
+    }
   }
 
-  h1.title {
-    font-size: 2.5rem;
-    text-shadow: 0 0 15px rgba(255, 0, 128, 0.7);
-    margin-bottom: 40px;
-  }
+ h1.title {
+  font-size: 2.5rem;
+  text-shadow: 0 0 15px rgba(255, 0, 128, 0.7);
+  margin-bottom: 40px;
+  position: relative;   /* or remove position if not needed */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
 
   .bouquet-link {
     text-decoration: none;
     position: relative;
   }
 
-  .bouquet-img {
-    width: 300px;
-    max-width: 100%;
-    cursor: pointer;
-    transition: transform 0.4s ease, filter 0.4s ease;
-    animation: float 3s ease-in-out infinite;
-    border-radius: 20px;
-    margin-left: 85px; /* adjust the value to move more or less */
-  }
+ .bouquet-img {
+  width: 300px;
+  max-width: 100%;
+  cursor: pointer;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  animation: float 3s ease-in-out infinite;
+  border-radius: 20px;
+  margin-left: 85px; /* adjust the value to move more or less */
+}
+
 
   .bouquet-img:hover {
     transform: translateY(-15px) scale(1.1) rotate(-3deg);
@@ -115,22 +148,56 @@
     box-shadow: 0 0 20px rgba(255, 0, 128, 0.7);
   }
 
+  /* Responsive styles */
+  @media (max-width: 480px) {
+    body {
+      height: auto;
+      padding: 20px 0;
+    }
+
+    h1.title {
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+    }
+
+    .container {
+      max-width: 90vw;
+      margin: 0 10px;
+    }
+
+    .bouquet-img {
+      width: 90vw;
+      max-width: 300px;
+      border-radius: 15px;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .corner {
+      width: 100px;
+      opacity: 0.6;
+    }
+
+    .bg-bouquet {
+      width: 300px;
+      opacity: 0.1;
+    }
+  }
 </style>
 </head>
 <body>
 
 <!-- Background bouquet -->
-<img src="adi.png" class="bg-bouquet">
+<img src="adi.png" class="bg-bouquet" alt="Background bouquet" />
 
 <!-- Corner bouquets -->
-<img src="adi.png" class="corner top-left">
-<img src="adi.png" class="corner bottom-right">
+<img src="adi.png" class="corner top-left" alt="Corner bouquet top left" />
+<img src="adi.png" class="corner bottom-right" alt="Corner bouquet bottom right" />
 
 <div class="container">
   <h1 class="title">Click the Bouquet 💐</h1>
 
   <a href="#" class="bouquet-link" onclick="goToLanding()">
-    <img src="adi.png" alt="Valentine Bouquet" class="bouquet-img">
+    <img src="adi.png" alt="Valentine Bouquet" class="bouquet-img" />
   </a>
 </div>
 
