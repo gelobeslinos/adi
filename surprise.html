@@ -54,15 +54,17 @@ button:hover {
 
 <script>
 const password = "ADIII";
-const hint = "It’s a nickname I use for you, with two extra letters added at the end and capitalized. 💕;
+const hint = "It’s a nickname I use for you, with two extra letters added at the end and capitalized. 💕";
 
 function enterPassword() {
   const userInput = prompt("Enter the password to reveal the surprise:");
-  if (userInput === password) {
-    // Only show the popup, no text on the page
+
+  if (userInput === null) {
+    return; // user pressed cancel
+  }
+
+  if (userInput.toUpperCase() === password) {
     alert("Surprise! LABAS KA NASA 7-11 ako may iaabot lang HAHAHAHAAHAHA💕");
-  } else if (userInput === null) {
-    // User clicked cancel, do nothing
   } else {
     alert("Wrong password adiii! Try again HAHAHAHAHAHA");
   }
