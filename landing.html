@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Happy Valentine 💖</title>
 
 <style>
   body {
-    margin: 0; 
+    margin: 0;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -35,13 +35,27 @@
     animation: float 4s ease-in-out infinite;
   }
 
-  .top-left { top: 20px; left: 20px; }
-  .bottom-right { bottom: 20px; right: 20px; transform: rotate(180deg); }
+  .top-left {
+    top: 20px;
+    left: 20px;
+  }
+
+  .bottom-right {
+    bottom: 20px;
+    right: 20px;
+    transform: rotate(180deg);
+  }
 
   @keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
   }
 
   .container {
@@ -49,10 +63,14 @@
     z-index: 2;
     animation: fadeIn 1.5s ease forwards;
     opacity: 0;
+    max-width: 480px;
+    padding: 0 15px;
   }
 
   @keyframes fadeIn {
-    to { opacity: 1; }
+    to {
+      opacity: 1;
+    }
   }
 
   h1 {
@@ -77,14 +95,14 @@
     border-radius: 20px;
     padding: 40px 20px;
     transition: 0.4s ease;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     display: block;
   }
 
   .card:hover {
     transform: translateY(-12px) scale(1.05);
     background: rgba(255, 255, 255, 0.25);
-    box-shadow: 0 20px 40px rgba(255,0,128,0.4);
+    box-shadow: 0 20px 40px rgba(255, 0, 128, 0.4);
   }
 
   .card img {
@@ -126,48 +144,98 @@
   }
 
   @keyframes floatUp {
-    0% { transform: translateY(0); opacity: 1; }
-    100% { transform: translateY(-110vh); opacity: 0; }
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-110vh);
+      opacity: 0;
+    }
   }
 
+  /* Responsive styles */
+  @media (max-width: 520px) {
+    .card-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .card {
+      padding: 30px 15px;
+      max-width: 320px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+    }
+
+    .bg-bouquet {
+      width: 300px;
+      opacity: 0.04;
+    }
+
+    .corner {
+      width: 100px;
+      opacity: 0.5;
+    }
+  }
+
+  @media (max-width: 350px) {
+    body {
+      height: auto;
+      padding-bottom: 40px;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      width: 90%;
+      font-size: 0.95rem;
+      padding: 10px 20px;
+    }
+  }
 </style>
 </head>
 <body>
 
 <!-- Background Images -->
-<img src="adi.png" class="bg-bouquet">
-<img src="adi.png" class="corner top-left">
-<img src="adi.png" class="corner bottom-right">
+<img src="adi.png" class="bg-bouquet" alt="Background bouquet" />
+<img src="adi.png" class="corner top-left" alt="Corner bouquet top left" />
+<img src="adi.png" class="corner bottom-right" alt="Corner bouquet bottom right" />
 
 <div class="container">
   <h1>Happy Valentine 💖</h1>
 
   <div class="card-grid">
-
     <!-- Song Card -->
     <a href="song.html" class="card">
-      <img src="https://media.tenor.com/15YUsMWt4FEAAAAi/music.gif" alt="Our Song">
+      <img src="https://media.tenor.com/15YUsMWt4FEAAAAi/music.gif" alt="Our Song" />
       <p>Music</p>
     </a>
 
     <!-- Memories Card -->
     <a href="picture.html" class="card">
-      <img src="https://media.tenor.com/-__vw7XVu-YAAAAj/cute-penguin.gif" alt="Memories">
+      <img src="https://media.tenor.com/-__vw7XVu-YAAAAj/cute-penguin.gif" alt="Memories" />
       <p>Image</p>
     </a>
 
     <!-- Message Card -->
     <a href="message.html" class="card">
-      <img src="https://media.tenor.com/lxayG1W9IhUAAAAi/twitter-bubu-kicking-feet.gif" alt="My Message">
+      <img src="https://media.tenor.com/lxayG1W9IhUAAAAi/twitter-bubu-kicking-feet.gif" alt="My Message" />
       <p>My Message</p>
     </a>
 
     <!-- Surprise Card -->
     <a href="surprise.html" class="card">
-      <img src="https://media.tenor.com/QdZ93N9xMrAAAAAi/bubu-dudu-love-bubu-dudu.gif" alt="Surprise">
+      <img src="https://media.tenor.com/QdZ93N9xMrAAAAAi/bubu-dudu-love-bubu-dudu.gif" alt="Surprise" />
       <p>Surprise</p>
     </a>
-
   </div>
 
   <button class="btn" onclick="goBack()">⬅ Back</button>
